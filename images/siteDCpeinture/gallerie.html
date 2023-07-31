@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallerie</title>
+    <!-- link Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- link file css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gellerieb">
+    <div class="header">
+        <i id="btn-menu" class="fa-solid fa-bars"></i>
+        <a href="#" class="logo">DC-PEINTURE</a>
+        <div class="contanier">
+            <div id="menu" class="nav-links">
+                <a class="active" href="index.html">Acceuil</a>
+                <a href="gallerie.html">Gallerie</a>
+                <a href="contact.html">Contact</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- add class active on click on btn menu -->
+
+    <script>
+        let btnMenu = document.getElementById('btn-menu');
+        let menu = document.getElementById('menu');
+
+        btnMenu.onclick = () =>{
+            btnMenu.classList.toggle('fa-times');
+            menu.classList.toggle('active')
+        }
+    </script>
+
+    <div class="container2">
+        <h1> Gallerie travaux avant et apres intervention : </h1>
+        <div class="image-container">
+            <div class="image"><img src="images/IMG_5600.JPG" alt=""></div>
+            <div class="image"><img src="images/IMG_5593.JPG" alt=""></div>
+            <div class="image"><img src="images/IMG_5592.JPG" alt=""></div>
+            <div class="image"><img src="images/IMG_5601.JPG" alt=""></div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="images/IMG_5600.JPG" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.image-container img').forEach(image =>{
+            image.onclick = () =>{
+                document.querySelector('.popup-image').style.display = 'block';
+            document.querySelector('.popup-image img').src = image.getAttribute('src');
+
+            }
+            
+
+        });
+
+        document.querySelector('.popup-image span').onclick = () =>{
+            document.querySelector('.popup-image').style.display = 'none';
+
+        }
+
+    </script>
+    
+
+   
+        </p>
+    </footer>
+</body>
+</html>
